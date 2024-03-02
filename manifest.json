@@ -1,0 +1,19 @@
+{
+  "name": "GMeet Conversation",
+  "version": "1.0.0",
+  "description": "Get all gmeet conversation",
+  "manifest_version": 3,
+  "author": "Sagar",
+  "permissions": ["tabs","storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["jquery.js", "index.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Get all gmeet conversation",
+    "default_popup": "popup.html"
+  }
+}
