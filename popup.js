@@ -1,16 +1,33 @@
-document.getElementById("myButton").addEventListener("click", clickMe);
+// show g-meet conversations on page load
+window.onload = function () {
+  chrome.storage.local.get("gmeet_chat_v1", function (result) {
+    console.log("loaded data", result);
 
+    let chatDataElement = document.getElementById("chat_data");
+    if (result["gmeet_chat_v1"]) {
+      const gMeets = Object.keys(result["gmeet_chat_v1"]);
+      gMeets.forEach((meet) => {
+        let divElement = document.createElement("div");
 
-function clickMe() {
-  chrome.storage.local.get('gmeet_chat_v1', function(result) {
-    console.log("loaded data",result);
+        divElement.innerHTML = `
+        <h2>${meet}</h2>
+        `;
 
-    var chatDataElement = document.getElementById("chat_data");
-    if (result['gmeet_chat_v1']) {
-      chatDataElement.innerText = JSON.stringify(result['gmeet_chat_v1']);
+        result["gmeet_chat_v1"][meet].forEach((info) => {
+          let innerDivElement = document.createElement("div");
+
+          innerDivElement.innerHTML = `
+          <h4>${info.from} at ${info.time}:</h4>
+          <p>${info.message}</p>
+          `;
+
+          divElement.appendChild(innerDivElement);
+        });
+
+        chatDataElement.appendChild(divElement);
+      });
     } else {
-      chatDataElement.innerText = 'No data found';
+      chatDataElement.innerText = "No data found";
     }
-
   });
-}
+};
