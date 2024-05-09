@@ -12,8 +12,10 @@
       "run_at": "document_idle"
     }
   ],
+  "background": {
+    "service_worker": "script.js"
+  },
   "action": {
-    "default_title": "Get all gmeet conversation",
-    "default_popup": "popup.html"
+    "default_title": "Get all gmeet conversation"
   }
 }
