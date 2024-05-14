@@ -8,6 +8,7 @@ window.onload = function () {
       const gMeets = Object.keys(result["gmeet_chat_v1"]);
       gMeets.forEach((meet) => {
         let divElement = document.createElement("div");
+        divElement.classList.add("chat-container");
 
         divElement.innerHTML = `
         <h2>${meet}</h2>
@@ -18,7 +19,7 @@ window.onload = function () {
 
           innerDivElement.innerHTML = `
           <h4>${info.from} at ${info.time}:</h4>
-          <p>${info.message}</p>
+          <p>${info.message.join("<br /><br />")}</p>
           `;
 
           divElement.appendChild(innerDivElement);
