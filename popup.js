@@ -16,7 +16,7 @@ window.onload = function () {
         timeA = timeA ? Number(timeA) : Infinity;
         timeB = timeB ? Number(timeB) : Infinity;
 
-        return timeA - timeB;
+        return timeB - timeA;
       });
 
       gMeets.forEach((meet) => {
