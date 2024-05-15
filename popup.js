@@ -29,16 +29,16 @@ window.onload = function () {
         <h2>${meet}</h2> <h3>(${first_reported_time})</h3>
         `;
 
-        // result["gmeet_chat_v1"][meet]["chat"].forEach((info) => {
-        //   let innerDivElement = document.createElement("div");
+        result["gmeet_chat_v1"][meet]["chat"].forEach((info) => {
+          let innerDivElement = document.createElement("div");
 
-        //   innerDivElement.innerHTML = `
-        //   <h4>${info.from} at ${info.time}:</h4>
-        //   <p>${info.message.join("<br /><br />")}</p>
-        //   `;
+          innerDivElement.innerHTML = `
+          <h4>${info.from} at ${info.time}:</h4>
+          <p>${info.message.join("<br /><br />")}</p>
+          `;
 
-        //   divElement.appendChild(innerDivElement);
-        // });
+          divElement.appendChild(innerDivElement);
+        });
 
         chatDataElement.appendChild(divElement);
       });
