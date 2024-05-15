@@ -30,14 +30,14 @@ var observer = new MutationObserver(() => {
         if (!result["gmeet_chat_v1"].hasOwnProperty(meeting_id)) {
             result["gmeet_chat_v1"][meeting_id] = {
                 "chat":[],
-                "first_reported_time": new Date().toLocaleString(), 
-                "last_reported_time": new Date().toLocaleString()
+                "first_reported_time": new Date().getTime(), 
+                "last_reported_time": new Date().getTime()
             };
         }
         
         // Push chat object to the array
         result["gmeet_chat_v1"][meeting_id]["chat"] = chat;
-        result["gmeet_chat_v1"][meeting_id]["last_reported_time"] = new Date().toLocaleString();
+        result["gmeet_chat_v1"][meeting_id]["last_reported_time"] = new Date().getTime();
         
     
         console.log(result);
