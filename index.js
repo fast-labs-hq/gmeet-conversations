@@ -16,27 +16,6 @@ var observer = new MutationObserver(() => {
         }
         chat.push(message)
     };
-
-    // to keep records of all gmeet conversation ids in sequence 
-    chrome.storage.local.get(["all_gmeets"], function(result){
-        const meeting_id = document.getElementsByClassName("u6vdEc")[0].innerText;
-        
-        // Initialize an empty object if gmeet_chat_v1 key doesn't exist
-        if (!result.hasOwnProperty("all_gmeets")) {
-            result["all_gmeets"] = [];
-        }
-
-        if(!result["all_gmeets"].includes(meeting_id)) {
-            result["all_gmeets"].push(meeting_id)
-        }
-
-        // Update the storage with the modified result object
-        chrome.storage.local.set({"all_gmeets": result["all_gmeets"]}, function() {
-            console.log('Data has been appended to the `all_gmeets` array in local storage.');
-            console.log(result["all_gmeets"])
-        });
-
-    });
     
     // to keep records of all gmeet conversations as a dictionary  
     chrome.storage.local.get(["gmeet_chat_v1"], function(result) {
@@ -49,11 +28,17 @@ var observer = new MutationObserver(() => {
         
         // Initialize an empty array if meeting_id key doesn't exist
         if (!result["gmeet_chat_v1"].hasOwnProperty(meeting_id)) {
-            result["gmeet_chat_v1"][meeting_id] = [];
+            result["gmeet_chat_v1"][meeting_id] = {
+                "chat":[],
+                "first_reported_time": new Date().getTime(), 
+                "last_reported_time": new Date().getTime()
+            };
         }
         
         // Push chat object to the array
-        result["gmeet_chat_v1"][meeting_id] = chat;
+        result["gmeet_chat_v1"][meeting_id]["chat"] = chat;
+        result["gmeet_chat_v1"][meeting_id]["last_reported_time"] = new Date().getTime();
+        
     
         console.log(result);
         
