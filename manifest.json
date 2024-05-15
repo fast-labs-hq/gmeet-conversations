@@ -17,5 +17,8 @@
   },
   "action": {
     "default_title": "Get all gmeet conversation"
+  },
+  "icons": {
+    "128": "images/logo.png"
   }
 }
