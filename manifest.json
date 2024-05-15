@@ -4,7 +4,7 @@
   "description": "Get all gmeet conversation",
   "manifest_version": 3,
   "author": "Sagar",
-  "permissions": ["tabs","storage"],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://meet.google.com/*"],
