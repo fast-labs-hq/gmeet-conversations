@@ -1,9 +1,9 @@
 {
-  "name": "GMeet Conversation",
+  "name": "ChatterKeep",
   "version": "1.0.0",
-  "description": "Get all gmeet conversation",
+  "description": "Keep a record of all your important conversations during Google Meet sessions with ChatterKeep. This Chrome extension automatically captures and saves all chat messages from your meetings, allowing you to review and reference them later.",
   "manifest_version": 3,
-  "author": "Sagar",
+  "author": "Sagar Sehgal & Harshita Mangla",
   "permissions": ["storage"],
   "content_scripts": [
     {
@@ -16,7 +16,7 @@
     "service_worker": "script.js"
   },
   "action": {
-    "default_title": "Get all gmeet conversation"
+    "default_title": "ChatterKeep\nGet all Google meet conversations"
   },
   "icons": {
     "128": "images/logo.png"
