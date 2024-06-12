@@ -58,8 +58,9 @@ window.onload = async () => {
         console.log("waiting for the meeting to start") 
         chat_button = document.getElementsByClassName("VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ JsuyRc boDUxc")
     }
-    // console.log("chat size > 0")
-    // console.log(chat_button)
+    
+    // open and close the chat box in order to load the internal components
+    chat_button[2].click()
     chat_button[2].click()
 
     var chat = document.getElementsByClassName("z38b6")
