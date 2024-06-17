@@ -1,19 +1,27 @@
 body {
-    padding: 12px 50px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
 
 #chat_data {
-    border: 1px solid #d0d5dd;
+    /* border: 1px solid #d0d5dd; */
     border-radius: 6px;
     display: flex;
     flex-direction: row;
-    min-height: 80vh;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+#meeting_index_container {
+    width: 22%;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 #meet_id_container {
-    width: 22%;
-    padding: 24px;
-    max-height: 80vh;
+    padding: 1%;
+    max-height: 100vh;
     overflow-y: scroll;
 }
 
@@ -37,7 +45,7 @@ body {
     width: 78%;
     padding: 12px 24px;
     border-left: 1px solid #d0d5dd !important;
-    max-height: 80vh;
+    max-height: 100vh;
     overflow-y: scroll;
 }
 
@@ -66,7 +74,7 @@ body {
 }
 
 .chat-text-right {
-    margin-left: auto
+    /* margin-left: auto */
 }
 
 .chat-text-from {
