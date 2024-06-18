@@ -1,6 +1,6 @@
 {
   "name": "ChatterKeep",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ChatterKeep captures and saves Google Meet chat messages, letting you review and reference them after your meetings.",
   "manifest_version": 3,
   "author": "Sagar Sehgal & Harshita Mangla",
